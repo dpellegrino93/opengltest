@@ -29,27 +29,7 @@ cVoxel cVoxelChunk::getVoxel(short x, short y, short z)
 	return Slice[y].data[x][z];
 }
 
-/*
-Cerca il voxel alle coordinate x y z 
-Aggiunge ai vettori il quad del voxel che ha come normale cVec3(xNor,yNor,zNor);
-									    Y
-	O-------------O			0  1		A
-	| 		    . |			2  3		|
-	|		  .	  |						O-->X
-	|	   . 	  |						
-	|	.	 	  |						
-	| .			  |						
-	O-------------O
 
-	trovare num di vertici già presenti = mVertexDataVector.size()
-	inserire vertice 0
-	inserire vertice 1
-	inserire vertice 2
-	inserire vertice 3
-
-	inserire indici 0 1 2  + mVertexDataVector.size()
-	inserire indici 1 2 3  + mVertexDataVector.size()
-	*/
 void cVoxelChunk::AddQuad(short x, short y, short z, 
 			     short xNor, short yNor, short zNor,
 				 std::vector<sColorVertex> & VertexVector,
@@ -59,7 +39,7 @@ void cVoxelChunk::AddQuad(short x, short y, short z,
 	cUnpackedVoxel TempVoxel;
 
 	TempVoxel.FromVoxel(Slice[y].data[x][z]);
-	//Proprietà in comune tra i vertici
+	//Proprietï¿½ in comune tra i vertici
 	TempVertex.Nor = cVec3((float)xNor,(float)yNor,(float)zNor);
 	TempVertex.Nor.Normalize();
 	TempVertex.Col = cVec3(TempVoxel.Red, TempVoxel.Green, TempVoxel.Blue);
@@ -192,7 +172,7 @@ void cVoxelChunk::Update()
 	//std::cout<<"*Costruzione chunk voxel...\n";
 	for(int y=0;y<CHUNK_HEIGHT;y++)			//Y = altezza
 		for(int x=0;x<CHUNK_SIZE;x++)		//X = Larghezza
-			for(int z=0;z<CHUNK_SIZE;z++)	//Z = Profondità
+			for(int z=0;z<CHUNK_SIZE;z++)	//Z = Profonditï¿½
 			{
 				if(Slice[y].data[x][z].getData()<0)
 				{

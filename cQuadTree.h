@@ -6,9 +6,6 @@
 #include <vector>
 
 
-TODO:
-	- TUTTO!
-
 
 class cQuadTreeNode
 {

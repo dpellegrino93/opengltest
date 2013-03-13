@@ -31,7 +31,7 @@ void cEngine::Setup()
 	{
 		for(int x=0 ; x<CHUNK_SIZE ; x++)		//X = Larghezza
 		{
-			for(int z=0 ; z<CHUNK_SIZE ; z++)	//Z = Profondità
+			for(int z=0 ; z<CHUNK_SIZE ; z++)	//Z = Profonditï¿½
 			{
 				tvox.setColorS(x,y,z,0);
 				TestChunk.setVoxel(x,y,z,tvox);
@@ -42,7 +42,7 @@ void cEngine::Setup()
 	/*
 	for(int x=0 ; x<CHUNK_SIZE ; x++)		//X = Larghezza
 		{
-			for(int z=0 ; z<CHUNK_SIZE ; z++)	//Z = Profondità
+			for(int z=0 ; z<CHUNK_SIZE ; z++)	//Z = Profonditï¿½
 			{
 				double tx = (double)(CHUNK_SIZE/2-x)/20;
 				double tz = (double)(CHUNK_SIZE/2-z)/20;
@@ -230,70 +230,6 @@ void cEngine::Update(double Time)
 
 	//cVoxel tvox;
 	
-
-	/*
-	for(int x=0 ; x<CHUNK_SIZE ; x++)		//X = Larghezza
-		{
-			for(int z=0 ; z<CHUNK_SIZE ; z++)	//Z = Profondità
-			{
-				double tx = (double)(CHUNK_SIZE/2-x)/20 ;
-				double tz = (double)(CHUNK_SIZE/2-z)/20 ;
-				//double ty = sin(tx)*cos(tz)*cvox;
-				double ty = sin(tx*tx+tz*tz+cvox)/(tx*tx+tz*tz+1);
-				int y = ty*CHUNK_HEIGHT/2-1+CHUNK_HEIGHT/2;
-				if(y>=CHUNK_HEIGHT)
-					y=CHUNK_HEIGHT-1;
-				else if(y<0)
-					y=0;
-				int fy=0;
-				for(;fy<y;fy++)
-				{
-					tvox.setColorS(x,
-								   fy,
-								   z,
-								   1);
-					colcount++;
-					TestChunk.setVoxel(x,fy,z,tvox);
-				}
-				
-				for(;fy<CHUNK_HEIGHT;fy++)
-				{
-					tvox.setData(0);
-					TestChunk.setVoxel(x,fy,z,tvox);
-				}
-			}
-		}
-	*/
-	float inutile;
-	/*
-
-	float f;
-	float scaleo = 10;
-	float scale = scaleo;
-	static float bounce=0;
-	#pragma omp parallel for num_threads(2)
-	for(int x=0 ; x<CHUNK_SIZE ; ++x)		//X = Larghezza
-	{
-		double tx = (double)(CHUNK_SIZE/2-x)/scale ;
-		for(int z=0 ; z<CHUNK_SIZE ; ++z)	//Z = Profondità
-		{
-			double tz = (double)(CHUNK_SIZE/2-z)/scale;
-			
-			for(int y=0 ; y<CHUNK_HEIGHT ; ++y)
-			{
-				scale = (sin(cvox)+1.5)*scaleo;
-				double ty = (double)(CHUNK_HEIGHT/2-y)/scale;
-				//f =  sin(tx*sin(tx)+ty*cos(ty)+tz*sin(tz)+cvox)/(tx*tx+ty*ty+tz*tz+1);
-				f = ((-(tx*tx)*(tz*tz*tz)-(9/80)*(ty*ty)*(tz*tz*tz)) + pow(   (tx*tx)+(9/4)*(ty*ty)+(tz*tz)-1   ,  3   ));
-				tvox.setColorF(  1,0,0, 
-								(f>(cos(cvox)+1)/20000 ?0:1)   
-								);
-				TestChunk.setVoxel(x,y,z,tvox);
-			}
-		}
-	}
-
-	*/
 
 	//if(cvox<=-1) cvoxdir = 1;
 	//else if(cvox>=1) cvoxdir = -1;

@@ -13,7 +13,7 @@ Struttura voxel:
 
 Numeri magici:
 
-	- 0x8000  = 1000 0000 0000 0000			bit più significativo
+	- 0x8000  = 1000 0000 0000 0000			bit piï¿½ significativo
 	- 0x7C00  = 0111 1100 0000 0000			5 bit rossi
 	- 0x3E0   = 0000 0011 1110 0000			5 bit verdi
 	- 0x1F	  = 0000 0000 0001 1111			5 bit blu  /  troncare a 5 bit 
@@ -118,21 +118,6 @@ class cVoxelSlice
 class cVoxelChunk
 {
 private:
-	/* X Y Z
-		  O - - - O
-		  | \       \ 
-		  |   O - - - O
-		  |   |-------|
-		  |   |-------|
-		  |   |-------|
-		  |   |-------| CHUNK_HEIGHT
-		  |   |-------|
-		  O   |-------|         Y
-		    \ |-------|		  	|
-			  O	- - - O         O - X
-			  CHUNK_SIZE	     \
-								   Z
-	*/		
 	cVoxelSlice			*Slice;
 	cVoxelMesh			*Mesh;
 	//cAABox			BoundingBox;
@@ -155,7 +140,7 @@ public:
 
 	cVoxel				getVoxel(short x, short y, short z);
 	//UpdateMesh() blocca l'accesso esterno ai voxel
-	//Se è necessario ricreare la mesh lo fa
+	//Se ï¿½ necessario ricreare la mesh lo fa
 	void				Update();
 	void				MemZero();
 	//Draw una volta finito sblocca l'accesso ai voxel

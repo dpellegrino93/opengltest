@@ -20,32 +20,3 @@
 #define MAX(a, b)  (((a) > (b)) ? (a) : (b))
 #define MIN(a, b)  (((a) < (b)) ? (a) : (b))
 #define ABS(a)  (((a) >=  0)  ? (a) : (-a))
-
-/*TODO:
-
-?DA FARE? Cambiare formato G-Buffer:
-	-1) INT   8  bit RGB : Colore				Alpha : Spec power
-	-2) FLOAT 16 bit RGB : Normale				Alpha : Spec mult
-	-3) FLOAT 32 bit	 : Profondità
-
-IN PROGRESS: Primitivi e relative intersezioni:
-	-cRay
-	-cAABox
-	-cFrustum
-	-cSphere
-
-Aggiustare pipeline deferred rendering:
-	rendere cDeferredRenderer autonoma
-
-TILED DEFERRED RENDERING:
-	la cpu divide lo schermo in tiles
-	per ognuno calcola le luci che lo influenzano
-	tramite intersezione frustum sfera
-	manda le luci allo shader lightpass
-
-Possibile formato voxel:
-short voxeldata;	2 byte
-
-
-	
-*/
